@@ -1,4 +1,4 @@
-name: hello-world
+name: open edge
 on:
    push:
     branches:
