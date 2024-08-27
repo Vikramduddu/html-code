@@ -1,0 +1,11 @@
+name: hello-world
+on:
+   push:
+    branches:
+       - main
+jobs:
+  my-job:
+    runs-on: self-hosted
+    steps:
+      - name: my-step
+        run: C:\Users\Administrator\Desktop\demo.bat
