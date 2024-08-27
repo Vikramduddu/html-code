@@ -1,4 +1,4 @@
-name: hello-world
+name: open edge
 on:
    push:
     branches:
@@ -8,4 +8,4 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: my-step
-        run: C:\Users\Administrator\Desktop\demo.bat
+        run: C:\Users\Administrator\Desktop\nexus.bat
