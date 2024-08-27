@@ -7,5 +7,5 @@ jobs:
   my-job:
     runs-on: self-hosted
     steps:
-      - name: run a bat file
+      - name: run a bat files
         run: C:\Users\Administrator\Desktop\nexus.bat
