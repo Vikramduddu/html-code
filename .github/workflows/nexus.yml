@@ -8,4 +8,4 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: run a nexus bat file- 1
-        run: psexec.exe   C:\Users\Administrator\Desktop\nexus.bat
+        run: psexec.exe -s -d cmd.exe /c   "C:\Users\Administrator\Desktop\nexus.bat"
