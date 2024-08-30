@@ -7,5 +7,5 @@ jobs:
   my-job:
     runs-on: self-hosted
     steps:
-      - name: Run a nexus bat file 
+      - name: Run a nexus bat file for demo
         run: psexec -i 2 C:\Users\Administrator\Desktop\nexus.bat
