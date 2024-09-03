@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 jobs:
   my-job:
-    runs-on: self-hosted
+    struns-on: self-hosted
     steps:
       - name: Run a nexus bat file 
         run: psexec -i 2 C:\Users\Administrator\Desktop\nexus.bat
