@@ -2,7 +2,7 @@ name: open edge for testing
 on: 
   workflow_dispatch:
 jobs:
-  my-job:
+  nexus_job:
     runs-on: self-hosted
     steps:
       - name: Run a nexus bat file 
