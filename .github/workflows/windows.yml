@@ -2,10 +2,11 @@ name: open edge-1
 on:
    push:
     branches:
+        main
      
 jobs:
   my-job:
     runs-on: self-hosted
     steps:
       - name: run a bat file
-        run: C:\Users\Administrator\Desktop\nexus.bat
+        run: C:\Users\Administrator\Desktop\demo.bat
