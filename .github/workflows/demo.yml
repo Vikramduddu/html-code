@@ -1,4 +1,4 @@
-name: open edge for testingt
+name: open edge for testing
 on: 
   workflow_dispatch:
 jobs:
