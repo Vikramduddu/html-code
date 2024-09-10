@@ -7,5 +7,5 @@ jobs:
   nexus_job:
     runs-on: self-hosted
     steps:
-      - name: Run a nexus bat file 
+      - name: Run a nexus bat files
         run: C:\Users\Administrator\Desktop\first.bat
