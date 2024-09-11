@@ -1,8 +1,6 @@
 name: open edge for testing first job
 on: 
-  push:
-     branches:
-          main
+  
 jobs:
   nexus_job:
     runs-on: self-hosted
