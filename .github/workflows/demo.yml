@@ -1,4 +1,4 @@
-name: open edge for testing first job
+name: open edge for testing first jobs
 on: 
   push:
      branches:
