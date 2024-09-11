@@ -1,8 +1,6 @@
 name: open edge for testing
 on:
-   push:
-    branches:
-       - main
+  
 jobs:
   my-job:
     runs-on: self-hosted
