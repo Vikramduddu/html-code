@@ -1,9 +1,0 @@
-name: open edge for testing
-on: 
-  workflow_dispatch:
-jobs:
-  nexus_job:
-    runs-on: [self-hosted, linux, x64, master_runner]   
-    steps:
-      - name: Run a nexus bat file 
-        run: bash ./hello.sh
