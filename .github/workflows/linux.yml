@@ -6,4 +6,4 @@ jobs:
     runs-on: [self-hosted, linux, x64, linux_machine]  
     steps:
       - name: Run a nexus bat file 
-        run: bash ./tmp/hello.sh
+        run: bash /root/github_workflow/hello.sh
