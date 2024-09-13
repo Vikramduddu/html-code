@@ -1,8 +1,6 @@
 name: run a shell script
 on: 
-  push:
-     branches:
-        - main
+  workflow_dispatch:
 jobs:
   nexus_job:
     runs-on: [self-hosted, linux, x64, linux_machine]  
