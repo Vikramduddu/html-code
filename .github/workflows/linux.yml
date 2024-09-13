@@ -1,4 +1,4 @@
-name: open edge for testing
+name: run a shell script
 on: 
   workflow_dispatch:
 jobs:
