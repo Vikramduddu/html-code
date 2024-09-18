@@ -2,14 +2,15 @@ name: open edge for testing first jobs
 on: 
   workflow_dispatch:
 jobs:
-  nexus_job:
+  nexus_job_for_pass:
     runs-on: [self-hosted, nexus_server]
     steps:
       - name: set env variable
+        id: string
         run: |
-           echo "PROJECT_TO_TEST=$(type C:\Users\Administrator\second.txt)" >> $GITHUB_ENV
+           type C:\Users\Administrator\second.txt
   
    # Then you can use it in your if statement like so 
       - name: Conditionally Run
-        if: "contains(env.PROJECT_TO_TEST, 'PASS')"
+        if: "${{ needs.nexus_job_for_pass.outputs.output1 == 'PASS' }}"
         run: psexec -i 2 C:\Users\Administrator\Desktop\demo.bat
