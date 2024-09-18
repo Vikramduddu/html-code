@@ -17,5 +17,5 @@ jobs:
     needs: nexus_job_for_pass
     steps:
       - name: Conditionally Run
-        if: steps.string.outputs == 'PASS'
+        if: steps.string.outputs.output1 == 'PASS'
         run: psexec -i 2 C:\Users\Administrator\Desktop\demo.bat
