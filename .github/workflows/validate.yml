@@ -4,13 +4,18 @@ on:
 jobs:
   nexus_job_for_pass:
     runs-on: [self-hosted, nexus_server]
+    outputs:
+      output1: ${{ steps.string.outputs.test }}
     steps:
       - name: set env variable
         id: string
         run: |
            type C:\Users\Administrator\second.txt
   
-   # Then you can use it in your if statement like so 
+  smokeTest:
+    runs-on: [self-hosted, nexus_server]
+    needs: nexus_job_for_pass
+    steps:
       - name: Conditionally Run
         if: "${{ needs.nexus_job_for_pass.outputs.output1 == 'PASS' }}"
         run: psexec -i 2 C:\Users\Administrator\Desktop\demo.bat
