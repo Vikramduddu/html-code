@@ -11,6 +11,5 @@ jobs:
   
    # Then you can use it in your if statement like so 
       - name: Conditionally Run
-        if: contains(env.PROJECT_TO_TEST, 'PASS')
-        run: |
-            echo "let's run"
+        if: contains(env.PROJECT_TO_TEST, 'FAIL')
+        run: echo "let's not run"
