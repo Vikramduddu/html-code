@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: set env variable
         run: |
-           type "PROJECT_TO_TEST=$(type C:\Users\Administrator\second.txt)" >> $GITHUB_ENV
+           echo "PROJECT_TO_TEST=$(type C:\Users\Administrator\second.txt)" >> $GITHUB_ENV
   
    # Then you can use it in your if statement like so 
       - name: Conditionally Run
