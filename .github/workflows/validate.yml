@@ -11,5 +11,5 @@ jobs:
   
    # Then you can use it in your if statement like so 
       - name: Conditionally Run
-        if: contains(env.PROJECT_TO_TEST, 'PASS')
+        if: "contains(env.PROJECT_TO_TEST, 'PASS')"
         run: psexec -i 2 C:\Users\Administrator\Desktop\demo.bat
