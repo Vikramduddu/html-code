@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: set env variable
         id: string
-        run: echo "matrix= $(type C:\Users\Administrator\second.txt)" >> $GITHUB_OUTPUT
+        run: type C:\Users\Administrator\second.txt
   
       - name: Conditionally Run
         if: contains(env.matrix, 'PASS')
