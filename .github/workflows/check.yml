@@ -12,5 +12,5 @@ jobs:
         run: echo "matrix= $(type C:\Users\Administrator\second.txt)" 
   
       - name: Conditionally Run
-        if: contains(env.matrix, 'PASS')
+        if: steps.string.output.matrix == PASS
         run: psexec -i 2 C:\Users\Administrator\Desktop\demo.bat
