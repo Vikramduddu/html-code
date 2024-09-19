@@ -9,8 +9,8 @@ jobs:
     steps:
       - name: set env variable
         id: string
-        run: echo "matrix= $(type C:\Users\Administrator\second.txt)" 
+        run: echo "matrix= $(type C:\Users\Administrator\second.txt)" >> $GITHUB_OUTPUT
   
       - name: Conditionally Run
-        if: steps.string.output.matrix == PASS
+        if: "${{ steps.string.output.matrix == PASS }}"
         run: psexec -i 2 C:\Users\Administrator\Desktop\demo.bat
