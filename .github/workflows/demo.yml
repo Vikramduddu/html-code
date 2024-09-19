@@ -8,15 +8,15 @@ jobs:
       - name: Run a nexus bat file 
         run: psexec -i 2 C:\Users\Administrator\Desktop\second.bat
 
-      - name: get the condition
-        run:  type "PROJECT_TO_TEST= $(C:\Users\Administrator\second.txt)" >> $GITHUB_ENV
+    #  - name: get the condition
+     #   run:  type "PROJECT_TO_TEST= $(C:\Users\Administrator\second.txt)" >> $GITHUB_ENV
 
-      - name: Conditionally Run
-        if:   contains(env.PROJECT_TO_TEST, 'PASS')
-        run:  echo "SomeString did exist and should run"
+     # - name: Conditionally Run
+      #  if:   contains(env.PROJECT_TO_TEST, 'PASS')
+      #  run:  echo "SomeString did exist and should run"
         
-      - name: Conditionally Run
-        if:   contains(env.PROJECT_TO_TEST, 'FAIL')
-        run:  echo "ShouldNotRun"  
+     # - name: Conditionally Run
+     #   if:   contains(env.PROJECT_TO_TEST, 'FAIL')
+     #   run:  echo "ShouldNotRun"  
 
       
