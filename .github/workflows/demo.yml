@@ -8,6 +8,13 @@ jobs:
       - name: Run a nexus bat file 
         run: psexec -i 2 C:\Users\Administrator\Desktop\second.bat
 
+      - name: run a bat file
+        id: test
+        run: psexec -i 2 C:\Users\Administrator\Desktop\test.bat
+
+      - name: robot scripts exited with failure status
+        if: ${{ failure() && steps.test.conclusion == 'failure' }}
+
     #  - name: get the condition
      #   run:  type "PROJECT_TO_TEST= $(C:\Users\Administrator\second.txt)" >> $GITHUB_ENV
 
