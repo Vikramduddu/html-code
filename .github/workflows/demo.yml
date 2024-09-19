@@ -12,9 +12,9 @@ jobs:
         id: test
         run: psexec -i 2 C:\Users\Administrator\Desktop\test.bat
 
-      - name: robot scripts exited with failure status
+      - name: robot scripts exited with sccess status
         if: ${{ success() && steps.test.conclusion == 'success' }}
-        run:  echo "ecevything executed successfully"  
+        run:  echo "everything executed successfully"  
 
       - name: robot scripts exited with failure status
         if: ${{ failure() && steps.test.conclusion == 'failure' }}
