@@ -5,8 +5,8 @@ jobs:
   nexus_job:
     runs-on: [self-hosted, nexus_server]
     steps:
-      - name: Run a nexus bat file 
-        run: psexec -i 2 C:\Users\Administrator\Desktop\second.bat
+     # - name: Run a nexus bat file 
+      #  run: psexec -i 2 C:\Users\Administrator\Desktop\second.bat
 
       - name: run a bat file
         id: test
