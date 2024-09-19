@@ -12,5 +12,5 @@ jobs:
         run: echo "matrix= $(type C:\Users\Administrator\second.txt)" >> $GITHUB_ENV
   
       - name: Conditionally Run
-        if: contains(steps.string.outputs.matrix == 'PASS' )
+        if: contains(steps.string.outputs.matrix == 'PASS')
         run: psexec -i 2 C:\Users\Administrator\Desktop\demo.bat
