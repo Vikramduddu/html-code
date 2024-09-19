@@ -5,13 +5,12 @@ jobs:
   nexus_job_for_pass:
     runs-on: [self-hosted, nexus_server]
     outputs:
-      output1: ${{ steps.string.outputs.test }}
+      matrix: ${{ steps.string.outputs.matrix }}
     steps:
       - name: set env variable
         id: string
-        run: |
-           type C:\Users\Administrator\second.txt 
+        run: echo "matrix= $(type C:\Users\Administrator\second.txt)" >> $GITHUB_ENV
   
       - name: Conditionally Run
-        if: steps.string.outputs.output1 == 'PASS'
+        if: contains(steps.string.outputs.matrix == 'PASS' )
         run: psexec -i 2 C:\Users\Administrator\Desktop\demo.bat
