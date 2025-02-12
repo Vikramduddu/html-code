@@ -1,0 +1,8 @@
+---
+- hosts: some brach clone
+  gather_facts: true
+  tasks:
+
+      - name: this is for testing
+        git:
+          url:
