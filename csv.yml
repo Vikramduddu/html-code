@@ -1,0 +1,44 @@
+---
+- name: Replace string in specific CSV column
+  hosts: localhost  # Or your target hosts
+  gather_facts: false
+  vars:
+    csv_file: "/path/to/your/file.csv"
+    column_number: 2  # Column index (1-based)
+    old_string: "old_value"
+    new_string: "new_value"
+    delimiter: ","  # CSV delimiter
+    quotechar: '"'  # Quote character if needed
+
+  tasks:
+    - name: Read CSV file
+      slurp:
+        src: "{{ csv_file }}"
+      register: csv_content
+
+    - name: Parse CSV content
+      set_fact:
+        csv_lines: "{{ csv_content.content | b64decode | splitlines }}"
+
+    - name: Process CSV lines
+      set_fact:
+        processed_lines: >-
+          {% set ns = namespace(result=[]) %}
+          {% for line in csv_lines %}
+            {% set fields = line | from_csv(delimiter=delimiter, quotechar=quotechar) %}
+            {% if fields | length >= column_number %}
+              {% set fields = fields | list %}
+              {% if fields[column_number - 1] == old_string %}
+                {% set fields = fields[:(column_number - 1)] + [new_string] + fields[column_number:] %}
+              {% endif %}
+              {% do ns.result.append(fields | to_csv(delimiter=delimiter, quotechar=quotechar)) %}
+            {% else %}
+              {% do ns.result.append(line) %}  # Keep lines with fewer columns unchanged
+            {% endif %}
+          {% endfor %}
+          {{ ns.result }}
+
+    - name: Write modified CSV back to file
+      copy:
+        content: "{{ processed_lines | join('\n') }}"
+        dest: "{{ csv_file }}"
